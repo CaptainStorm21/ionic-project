@@ -4,16 +4,27 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TodoPageRoutingModule } from './todo-routing.module';
+
 
 import { TodoPage } from './todo.page';
+import { Routes, RouterModule } from '@angular/router';
+import { ComponentsModule } from './../components/components.module';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: TodoPage
+  }
+];
+
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     FormsModule,
     IonicModule,
-    TodoPageRoutingModule
+    RouterModule.forChild(routes),
+    ComponentsModule
   ],
   declarations: [TodoPage]
 })
